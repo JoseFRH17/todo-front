@@ -1,0 +1,7 @@
+<div style="display: flex;">
+    <span>{{textoPrueba}}</span>
+    <form (submit)="showTaskToAdd($event)">
+        <input type="text" [formControl]="taskToAdd"/>
+        <button type="submit">Add</button> 
+    </form>
+</div>

@@ -1,0 +1,15 @@
+<div>
+    <h1>ToDo App</h1>
+    <add-task 
+        [textoPrueba]="'hola'" 
+        (textoPruebaChange)="onTextoPruebaChange($event)"
+    ></add-task>
+</div>
+<div>
+    <h2>Tasks</h2>
+    <ul>
+        @for(task of taskList; track task) {
+            <li>{{task}}</li>
+        }
+    </ul>
+</div>
