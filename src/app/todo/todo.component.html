@@ -4,9 +4,5 @@
 </div>
 <div>
     <h2>Tasks</h2>
-    <ul>
-        @for(task of taskList; track task) {
-            <li>{{task}}</li>
-        }
-    </ul>
+    <task-list [taskList]="taskList"></task-list>
 </div>

@@ -11,14 +11,14 @@ describe('AddComponent', () => {
       imports: [AddComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(AddComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy(); 
+    expect(component).toBeTruthy();
   });
 
   it('Should have a taskToAdd FormControl', () => {
@@ -30,12 +30,12 @@ describe('AddComponent', () => {
   });
 
   it('Should raise addTaskEvent event when creating a new task', () => {
-    let taskToAdd = 'Irrelevant-task';
+    const taskToAdd = 'Irrelevant-task';
     let taskToAddEmitted = '';
     component.addTaskEvent.subscribe((text:string) => taskToAddEmitted = text);
     component.taskToAdd.setValue(taskToAdd);
 
-    component.onAddTask(new Event('click'));
+    component.onAddTask(new Event(''));
 
     expect(taskToAddEmitted).toBe(taskToAdd);
   });

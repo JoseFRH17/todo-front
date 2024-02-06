@@ -1,19 +1,27 @@
 import { Component } from '@angular/core';
 
 import { AddComponent } from './add/add.component';
+import {TaskListComponent} from "./task-list/task-list.component";
+import { Task } from './models/task';
 
 @Component({
-  selector: 'app-todo',
-  standalone: true,
-  imports: [AddComponent],
-  templateUrl: './todo.component.html',
-  styleUrl: './todo.component.css'
+    selector: 'app-todo',
+    standalone: true,
+    imports: [AddComponent, TaskListComponent],
+    templateUrl: './todo.component.html',
+    styleUrl: './todo.component.css'
 })
 export class TodoComponent {
 
-  taskList: string[] = ['Tarea 1', 'Tarea 2', 'Tarea 3'];
+    taskList: Task[] = [
+        {id: '1', title: 'Tarea 1', isCompleted: false},
+        {id: '2', title: 'Tarea 2', isCompleted: true},
+        {id: '3', title: 'Tarea 3', isCompleted: false}
+    ];
 
-  onAddTaskChange(texto:string){
-    this.taskList.push(texto);
-  }
+    onAddTaskChange(title:string){
+        const task: Task = {id: '4', title, isCompleted: false}
+        this.taskList.push(task);
+    }
+
 }

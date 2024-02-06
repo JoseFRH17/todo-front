@@ -1,0 +1,12 @@
+@if (taskList.length == 0) {
+    <p>Añade tareas nuevas</p>
+}
+
+<ul>
+    @for(task of taskList; track task.id) {
+        <li>
+            <label> {{task.title}} </label>
+            <input type="checkbox" [checked]="task.isCompleted" (click)="onIsCompleted(task)">
+        </li>
+    }
+</ul>
