@@ -13,7 +13,7 @@ export class TodoComponent {
 
   taskList: string[] = ['Tarea 1', 'Tarea 2', 'Tarea 3'];
 
-  onTextoPruebaChange(texto:string){
+  onAddTaskChange(texto:string){
     this.taskList.push(texto);
   }
 }

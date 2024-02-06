@@ -1,9 +1,6 @@
 <div>
     <h1>ToDo App</h1>
-    <add-task 
-        [textoPrueba]="'hola'" 
-        (textoPruebaChange)="onTextoPruebaChange($event)"
-    ></add-task>
+    <add-task (addTaskEvent)="onAddTaskChange($event)"></add-task>
 </div>
 <div>
     <h2>Tasks</h2>

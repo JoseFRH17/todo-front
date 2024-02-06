@@ -9,16 +9,13 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './add.component.css'
 })
 export class AddComponent {
+  @Output() addTaskEvent = new EventEmitter<string>();
 
-  @Input() textoPrueba: string = '';
-  @Output() textoPruebaChange = new EventEmitter<string>();
+  taskToAdd:FormControl = new FormControl('');
 
-  taskToAdd:FormControl = new FormControl();
-
-  showTaskToAdd(event: Event){
+  onAddTask(event: Event){
     event.preventDefault();
-    // console.log(this.taskToAdd.value);
 
-    this.textoPruebaChange.emit(this.taskToAdd.value);
+    this.addTaskEvent.emit(this.taskToAdd.value);
   }
 }
